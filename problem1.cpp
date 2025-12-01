@@ -2,20 +2,16 @@
 using namespace std;
 
 int main() {
-    const int sz = 10;
-    float *ptr,arr[sz];
-    ptr = arr;
-
+    const int SIZE=10;
+    float *ptr, arr[SIZE];
+    ptr=arr;
     cout<<"Enter 10 grades: ";
-    while (ptr< arr + sz) {
-        cin>>*ptr;
-        *ptr *= 0.3;
-        ptr++;
+    for (int i=0; i<10; i++) {
+        cin>>arr[i];
+        *(ptr+i)=arr[i]*0.3;
     }
-    ptr--;
-    while (ptr>=arr) {
-        cout<<*ptr<<" ";
-        ptr--;
+    for (int i=SIZE-1; i>=0; i--) {
+        cout<<*(ptr+i)<<" ";
     }
     return 0;
 }
