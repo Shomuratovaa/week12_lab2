@@ -2,12 +2,13 @@
 using namespace std;
 
 bool is_mirrored(const int* a, const int* b, int size) {
+    const int* ptr=b+size-1;
     for (int i=0; i<size; i++) {
-        if (*a!=*b) {
+        if (*a!=*ptr) {
             return false;
         }
         a++;
-        b--;
+        ptr--;
     }
     return true;
 }
